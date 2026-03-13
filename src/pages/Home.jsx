@@ -70,7 +70,7 @@ export default function HomePage({ data }) {
           <Container maxWidth="lg" sx={{ py: { xs: 5, md: 14 }, px: { xs: 2, md: 5 } }}>
             <Grid container spacing={{ xs: 2, md: 3 }} alignItems="flex-start">
               {/* Left: headline */}
-              <Grid size={{ xs: 12, md: 7 }} sx={{ borderRight: { md: '1px solid #E0E0E0' }, pr: { md: 4 } }}>
+              <Grid size={{ xs: 12, md: 7 }} sx={{ borderRight: { md: '1px solid rgba(255, 255, 255, 0.35)' }, pr: { md: 4 } }}>
                 <Typography
                   variant="overline"
                   sx={{ color: '#555', letterSpacing: '0.15em', mb: { xs: 1.5, md: 2 }, display: 'block', fontWeight: 500, fontFamily: accentFont, fontSize: { xs: '0.85rem', md: '1rem' } }}
@@ -124,7 +124,7 @@ export default function HomePage({ data }) {
                         sx={{
                           bgcolor: i === 0 ? '#000' : 'transparent',
                           color: i === 0 ? '#FFF' : '#111',
-                          borderColor: '#D8D8D8',
+                          borderColor: 'rgba(255, 255, 255, 0.35)',
                           borderRadius: '100px',
                           boxShadow: 'none',
                           minHeight: 48,
@@ -167,9 +167,9 @@ export default function HomePage({ data }) {
                     sx={{
                       textAlign: 'center',
                       py: 3,
-                      borderRight: i < home.stats.length - 1 ? { md: '1px solid #E0E0E0' } : 'none',
+                      borderRight: i < home.stats.length - 1 ? { md: '1px solid rgba(255, 255, 255, 0.35)' } : 'none',
                       borderBottom: {
-                        xs: i < home.stats.length - 2 ? '1px solid #E0E0E0' : 'none',
+                        xs: i < home.stats.length - 2 ? '1px solid rgba(255, 255, 255, 0.35)' : 'none',
                         md: 'none',
                       },
                       display: 'flex',
@@ -253,17 +253,21 @@ export default function HomePage({ data }) {
                           textDecoration: 'none',
                           color: 'inherit',
                           cursor: 'pointer',
-                          border: '1px solid var(--c-border)',
+                          border: '1px solid rgba(255, 255, 255, 0.35)',
                           borderRadius: 'var(--radius-lg)',
                           p: { xs: 2.5, md: 4 },
                           height: '100%',
                           position: 'relative',
                           overflow: 'hidden',
-                          bgcolor: 'var(--c-surface)',
-                          transition: 'background var(--transition-base), border-color var(--transition-base)',
+                          bgcolor: 'rgba(255, 255, 255, 0.45)',
+                          backdropFilter: 'blur(16px)',
+                          WebkitBackdropFilter: 'blur(16px)',
+                          boxShadow: '0 8px 32px rgba(0, 0, 0, 0.08)',
+                          transition: 'background var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base)',
                           '&:hover': {
-                            bgcolor: 'var(--c-surface-hover)',
-                            borderColor: 'var(--c-fg-muted)',
+                            bgcolor: 'rgba(255, 255, 255, 0.6)',
+                            borderColor: 'rgba(255, 255, 255, 0.5)',
+                            boxShadow: '0 12px 40px rgba(0, 0, 0, 0.12)',
                           },
                           '&:focus-visible': { outline: '2px solid #000', outlineOffset: '2px' },
                         }}
@@ -320,7 +324,7 @@ export default function HomePage({ data }) {
                                   px: 1.5,
                                   py: 0.4,
                                   borderRadius: '100px',
-                                  border: '1px solid #D8D8D8',
+                                  border: '1px solid rgba(255, 255, 255, 0.35)',
                                   textDecoration: 'none',
                                   '&:hover': { bgcolor: '#000', color: '#FFF', borderColor: '#000' },
                                 }}
@@ -421,15 +425,19 @@ export default function HomePage({ data }) {
                           textDecoration: 'none',
                           color: 'inherit',
                           cursor: 'pointer',
-                          border: '1px solid var(--c-border)',
+                          border: '1px solid rgba(255, 255, 255, 0.35)',
                           borderRadius: 'var(--radius-lg)',
                           p: { xs: 2.5, md: 4 },
                           height: '100%',
-                          bgcolor: 'var(--c-surface)',
-                          transition: 'background var(--transition-base), border-color var(--transition-base)',
+                          bgcolor: 'rgba(255, 255, 255, 0.45)',
+                          backdropFilter: 'blur(16px)',
+                          WebkitBackdropFilter: 'blur(16px)',
+                          boxShadow: '0 8px 32px rgba(0, 0, 0, 0.08)',
+                          transition: 'background var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base)',
                           '&:hover': {
-                            bgcolor: 'var(--c-surface-hover)',
-                            borderColor: 'var(--c-fg-muted)',
+                            bgcolor: 'rgba(255, 255, 255, 0.6)',
+                            borderColor: 'rgba(255, 255, 255, 0.5)',
+                            boxShadow: '0 12px 40px rgba(0, 0, 0, 0.12)',
                           },
                           '&:focus-visible': { outline: '2px solid #000', outlineOffset: '2px' },
                         }}
@@ -465,7 +473,7 @@ export default function HomePage({ data }) {
                                   px: 1.5,
                                   py: 0.4,
                                   borderRadius: '100px',
-                                  border: '1px solid #D8D8D8',
+                                  border: '1px solid rgba(255, 255, 255, 0.35)',
                                   textDecoration: 'none',
                                   '&:hover': { bgcolor: '#000', color: '#FFF', borderColor: '#000' },
                                 }}
@@ -560,7 +568,7 @@ export default function HomePage({ data }) {
                 variant="outlined"
                 size="large"
                 endIcon={<ArrowOutwardIcon />}
-                sx={{ color: '#111', borderColor: '#E0E0E0', borderRadius: '8px', boxShadow: 'none', minHeight: 48, px: { xs: 3, md: 4 }, width: { xs: '100%', md: 'auto' }, '&:hover': { borderColor: '#000', bgcolor: '#000', color: '#FFF', boxShadow: 'none' } }}
+                sx={{ color: '#111', borderColor: 'rgba(255, 255, 255, 0.35)', borderRadius: '8px', boxShadow: 'none', minHeight: 48, px: { xs: 3, md: 4 }, width: { xs: '100%', md: 'auto' }, '&:hover': { borderColor: '#000', bgcolor: '#000', color: '#FFF', boxShadow: 'none' } }}
               >
                 Contact page
               </Button>

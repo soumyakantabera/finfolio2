@@ -64,7 +64,7 @@ export default function ProjectDetail({ data }) {
         <Typography variant="body1" sx={{ mb: 3 }}>
           The project you're looking for doesn't exist or has been removed.
         </Typography>
-        <Button component={Link} to="/projects" variant="outlined" sx={{ color: '#111', borderColor: '#E0E0E0', minHeight: 48 }}>
+        <Button component={Link} to="/projects" variant="outlined" sx={{ color: '#111', borderColor: 'rgba(255, 255, 255, 0.35)', minHeight: 48 }}>
           ← Back to Projects
         </Button>
       </Container>
@@ -141,7 +141,7 @@ export default function ProjectDetail({ data }) {
           {project.tags?.length > 0 && (
             <Box sx={{ display: 'flex', gap: 0.5, flexWrap: 'wrap', mt: 2 }}>
               {project.tags.map((tag) => (
-                <Chip key={tag} label={tag} size="small" variant="outlined" sx={{ borderColor: '#E0E0E0', color: '#111' }} />
+                <Chip key={tag} label={tag} size="small" variant="outlined" sx={{ borderColor: 'rgba(255, 255, 255, 0.35)', color: '#111' }} />
               ))}
             </Box>
           )}
@@ -179,7 +179,7 @@ export default function ProjectDetail({ data }) {
               )}
             </Box>
             {project.keyFindings?.length > 0 && (
-              <Box sx={{ mb: 3, p: 2, border: '1px solid #E0E0E0' }}>
+              <Box sx={{ mb: 3, p: 2, border: '1px solid rgba(255, 255, 255, 0.35)' }}>
                 <Typography variant="subtitle2" fontWeight={700} sx={{ mb: 1, fontFamily: serifFont }}>Key Findings</Typography>
                 <Box component="ul" sx={{ m: 0, pl: 3 }}>
                   {project.keyFindings.map((finding, i) => (
@@ -210,7 +210,7 @@ export default function ProjectDetail({ data }) {
                       rel="noopener noreferrer"
                       size="small"
                       variant="outlined"
-                      sx={{ color: '#111', borderColor: '#E0E0E0', textTransform: 'none', minHeight: 36 }}
+                      sx={{ color: '#111', borderColor: 'rgba(255, 255, 255, 0.35)', textTransform: 'none', minHeight: 36 }}
                     >
                       {ds.label}
                     </Button>
@@ -237,7 +237,7 @@ export default function ProjectDetail({ data }) {
                     rel="noopener noreferrer"
                     variant="outlined"
                     size="small"
-                    sx={{ ml: 1, color: '#111', borderColor: '#E0E0E0', minHeight: 48, textTransform: 'none' }}
+                    sx={{ ml: 1, color: '#111', borderColor: 'rgba(255, 255, 255, 0.35)', minHeight: 48, textTransform: 'none' }}
                   >
                     View DOI
                   </Button>
@@ -246,7 +246,7 @@ export default function ProjectDetail({ data }) {
             )}
             {/* Citation block */}
             {project.citationText && (
-              <Box sx={{ p: 2, border: '1px solid #E0E0E0', mb: 3 }}>
+              <Box sx={{ p: 2, border: '1px solid rgba(255, 255, 255, 0.35)', mb: 3 }}>
                 <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 1 }}>
                   <Typography variant="subtitle2" fontWeight={700} sx={{ fontFamily: serifFont }}>Citation</Typography>
                   <Button
@@ -274,14 +274,14 @@ export default function ProjectDetail({ data }) {
                         Copy
                       </Button>
                     </Box>
-                    <Box sx={{ p: 1.5, bgcolor: '#FFF', border: '1px dashed #E0E0E0', fontFamily: accentFont, fontSize: '0.75rem', whiteSpace: 'pre-wrap', color: '#111' }}>
+                    <Box sx={{ p: 1.5, bgcolor: 'rgba(255, 255, 255, 0.5)', border: '1px dashed rgba(255, 255, 255, 0.35)', fontFamily: accentFont, fontSize: '0.75rem', whiteSpace: 'pre-wrap', color: '#111' }}>
                       {project.bibtex}
                     </Box>
                   </Box>
                 )}
               </Box>
             )}
-            <Divider sx={{ mb: 0, borderColor: '#E0E0E0' }} />
+            <Divider sx={{ mb: 0, borderColor: 'rgba(255, 255, 255, 0.35)' }} />
           </Box>
         )}
 
@@ -319,7 +319,7 @@ export default function ProjectDetail({ data }) {
                       rel="noopener noreferrer"
                       size="small"
                       variant="outlined"
-                      sx={{ color: '#111', borderColor: '#E0E0E0', minHeight: 44 }}
+                      sx={{ color: '#111', borderColor: 'rgba(255, 255, 255, 0.35)', minHeight: 44 }}
                     >
                       {link.label}
                     </Button>
@@ -327,7 +327,7 @@ export default function ProjectDetail({ data }) {
                 </Box>
               )}
             </Box>
-            <Divider sx={{ mb: 4, borderColor: '#E0E0E0' }} />
+            <Divider sx={{ mb: 4, borderColor: 'rgba(255, 255, 255, 0.35)' }} />
           </>
         )}
 
@@ -369,8 +369,8 @@ export default function ProjectDetail({ data }) {
                 fullWidth
                 sx={{
                   color: '#111',
-                  borderColor: '#E0E0E0',
-                  border: '1px solid #E0E0E0',
+                  borderColor: 'rgba(255, 255, 255, 0.35)',
+                  border: '1px solid rgba(255, 255, 255, 0.35)',
                   borderRadius: 0,
                   textTransform: 'none',
                   fontWeight: 600,
@@ -381,7 +381,7 @@ export default function ProjectDetail({ data }) {
                 Table of Contents
               </Button>
               <Collapse in={tocOpen}>
-                <Box sx={{ border: '1px solid #E0E0E0', borderTop: 0 }}>
+                <Box sx={{ border: '1px solid rgba(255, 255, 255, 0.35)', borderTop: 0 }}>
                   <List dense disablePadding>
                     {headings.map((h) => (
                       <ListItem key={h.id} disablePadding sx={{ pl: h.level === 3 ? 2 : 0 }}>
@@ -421,7 +421,7 @@ export default function ProjectDetail({ data }) {
         {/* Related projects */}
         {relatedProjects.length > 0 && (
           <>
-            <Divider sx={{ mb: 4, borderColor: '#E0E0E0' }} />
+            <Divider sx={{ mb: 4, borderColor: 'rgba(255, 255, 255, 0.35)' }} />
             <Typography variant="h5" fontWeight={700} sx={{ mb: 3, fontSize: { xs: '1.15rem', md: '1.5rem' }, fontFamily: serifFont }}>
               Related Projects
             </Typography>
@@ -436,7 +436,7 @@ export default function ProjectDetail({ data }) {
                       textDecoration: 'none',
                       color: 'inherit',
                       display: 'block',
-                      border: '1px solid #E0E0E0',
+                      border: '1px solid rgba(255, 255, 255, 0.35)',
                       '&:focus-visible': { outline: '2px solid #000', outlineOffset: '2px' },
                     }}
                   >
@@ -472,8 +472,8 @@ export default function ProjectDetail({ data }) {
           bottom: 0,
           left: 0,
           right: 0,
-          bgcolor: '#FFF',
-          borderTop: '1px solid #E0E0E0',
+          bgcolor: 'rgba(255, 255, 255, 0.5)',
+          borderTop: '1px solid rgba(255, 255, 255, 0.35)',
           px: 2,
           py: 1.5,
           gap: 1,
@@ -507,7 +507,7 @@ export default function ProjectDetail({ data }) {
               variant="outlined"
               sx={{
                 color: '#111',
-                borderColor: '#E0E0E0',
+                borderColor: 'rgba(255, 255, 255, 0.35)',
                 textTransform: 'none',
                 fontWeight: 600,
                 fontSize: '0.8rem',
@@ -527,7 +527,7 @@ export default function ProjectDetail({ data }) {
               variant="outlined"
               sx={{
                 color: '#111',
-                borderColor: '#E0E0E0',
+                borderColor: 'rgba(255, 255, 255, 0.35)',
                 textTransform: 'none',
                 fontWeight: 600,
                 fontSize: '0.8rem',

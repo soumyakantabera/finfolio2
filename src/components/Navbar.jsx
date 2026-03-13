@@ -96,12 +96,12 @@ export default function Navbar({ data }) {
         position="sticky"
         elevation={0}
         sx={{
-          bgcolor: scrolled ? 'rgba(250,250,250,0.94)' : '#FAFAFA',
-          backdropFilter: 'blur(18px)',
-          WebkitBackdropFilter: 'blur(18px)',
+          bgcolor: scrolled ? 'rgba(255, 255, 255, 0.45)' : 'rgba(255, 255, 255, 0.3)',
+          backdropFilter: 'blur(20px)',
+          WebkitBackdropFilter: 'blur(20px)',
           color: '#111',
-          boxShadow: scrolled ? '0 1px 0 0 rgba(0,0,0,0.08)' : 'none',
-          borderBottom: scrolled ? 'none' : '1px solid #EBEBEB',
+          boxShadow: scrolled ? '0 4px 24px rgba(0, 0, 0, 0.06)' : 'none',
+          borderBottom: '1px solid rgba(255, 255, 255, 0.35)',
           transition: 'box-shadow 0.25s ease, border-color 0.25s ease, background-color 0.25s ease',
         }}
       >
@@ -145,9 +145,12 @@ export default function Navbar({ data }) {
               display: { xs: 'none', md: 'flex' },
               alignItems: 'center',
               gap: '3px',
-              bgcolor: '#F0F0F0',
+              bgcolor: 'rgba(255, 255, 255, 0.35)',
               borderRadius: '100px',
               p: '5px',
+              backdropFilter: 'blur(12px)',
+              WebkitBackdropFilter: 'blur(12px)',
+              border: '1px solid rgba(255, 255, 255, 0.3)',
             }}
           >
             {allLinks.map((item) => (
@@ -172,7 +175,7 @@ export default function Navbar({ data }) {
                   transition: 'color 0.18s ease, background-color 0.18s ease',
                   '&:hover': {
                     color: isActive(item.path) ? '#fff' : '#0A0A0A',
-                    bgcolor: isActive(item.path) ? '#0A0A0A' : '#E2E2E2',
+                    bgcolor: isActive(item.path) ? '#0A0A0A' : 'rgba(255, 255, 255, 0.4)',
                   },
                   '&:focus-visible': { outline: '2px solid #0A0A0A', outlineOffset: '3px' },
                 }}
@@ -239,7 +242,7 @@ export default function Navbar({ data }) {
               px: '11px',
               boxSizing: 'border-box',
               transition: 'background-color 0.15s ease',
-              '&:hover': { bgcolor: '#F0F0F0' },
+              '&:hover': { bgcolor: 'rgba(255, 255, 255, 0.3)' },
               '&:focus-visible': { outline: '2px solid #0A0A0A', outlineOffset: '2px' },
             }}
           >

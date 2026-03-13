@@ -14,10 +14,10 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 
 const bw = {
   color: '#111', borderColor: '#000',
-  '&:hover': { borderColor: '#000', bgcolor: '#fff' },
+  '&:hover': { borderColor: '#000', bgcolor: 'rgba(255, 255, 255, 0.5)' },
 };
-const cardSx = { my: 2, borderRadius: 0, border: '1px solid #E0E0E0' };
-const iframeStyle = { border: '1px solid #E0E0E0', borderRadius: 0 };
+const cardSx = { my: 2, borderRadius: 0, border: '1px solid rgba(255, 255, 255, 0.35)' };
+const iframeStyle = { border: '1px solid rgba(255, 255, 255, 0.35)', borderRadius: 0 };
 
 function extractYouTubeId(url) {
   const m = url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?.*v=|embed\/))([\w-]+)/);
@@ -293,8 +293,8 @@ export default function EmbedBlock({
     case 'code': {
       if (!code) return <FallbackCard title={title || 'Code Snippet'} />;
       return withCaption(
-        <Box sx={{ position: 'relative', my: 1, border: '1px solid #E0E0E0', bgcolor: '#fff' }}>
-          <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', px: 1.5, py: 0.5, borderBottom: '1px solid #E0E0E0' }}>
+        <Box sx={{ position: 'relative', my: 1, border: '1px solid rgba(255, 255, 255, 0.35)', bgcolor: 'rgba(255, 255, 255, 0.5)' }}>
+          <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', px: 1.5, py: 0.5, borderBottom: '1px solid rgba(255, 255, 255, 0.35)' }}>
             <Typography variant="caption" sx={{ color: '#555', fontFamily: 'monospace' }}>{language || 'plain text'}</Typography>
             <Button size="small" startIcon={<ContentCopyIcon sx={{ fontSize: 14 }} />} onClick={handleCopy}
               sx={{ ...bw, fontSize: 12, textTransform: 'none' }}>

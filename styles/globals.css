@@ -1,16 +1,24 @@
-/* Design Tokens — Park UI-inspired minimalist B&W */
+/* Design Tokens — Glassmorphism */
 :root {
-  --c-bg: #FAFAFA;
+  --c-bg: #e8eaf6;
   --c-fg: #0A0A0A;
   --c-fg-secondary: #525252;
   --c-fg-muted: #A3A3A3;
-  --c-border: #EBEBEB;
-  --c-border-subtle: #F5F5F5;
+  --c-border: rgba(255, 255, 255, 0.35);
+  --c-border-subtle: rgba(255, 255, 255, 0.18);
   --c-accent: #0A0A0A;
-  --c-surface: #FFFFFF;
-  --c-surface-hover: #F5F5F5;
+  --c-surface: rgba(255, 255, 255, 0.45);
+  --c-surface-hover: rgba(255, 255, 255, 0.6);
   --border: 1px solid var(--c-border);
   --border-dashed: 1px dashed var(--c-border);
+
+  /* ── Glassmorphism Tokens ── */
+  --glass-bg: rgba(255, 255, 255, 0.45);
+  --glass-bg-hover: rgba(255, 255, 255, 0.6);
+  --glass-border: 1px solid rgba(255, 255, 255, 0.35);
+  --glass-blur: blur(16px);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+
   --s1: 4px;
   --s2: 8px;
   --s3: 12px;
