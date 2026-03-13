@@ -5,6 +5,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import theme from './theme/theme';
 import { loadData, saveData } from './data/portfolioData';
 import Navbar from './components/Navbar';
+import ScrollToTop from './components/ScrollToTop';
 import './index.css';
 
 // Lazy-load page components
@@ -36,6 +37,7 @@ export default function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <HashRouter>
+        <ScrollToTop />
         <Navbar data={data} isAdmin={isAdmin} />
         <React.Suspense fallback={<div />}>
           <Routes>
