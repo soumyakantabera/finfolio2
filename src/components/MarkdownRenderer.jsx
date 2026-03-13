@@ -224,11 +224,11 @@ function CodeBlock({ className, children }) {
   }, [code]);
 
   return (
-    <Box sx={{ my: 3, border: '1px solid #E0E0E0', borderRadius: 0 }}>
+    <Box sx={{ my: 3, border: '1px solid rgba(255, 255, 255, 0.35)', borderRadius: 0 }}>
       {/* Header bar */}
       <Box sx={{
         display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-        px: 1.5, py: 0.5, borderBottom: '1px solid #E0E0E0', bgcolor: '#fff',
+        px: 1.5, py: 0.5, borderBottom: '1px solid rgba(255, 255, 255, 0.35)', bgcolor: 'rgba(255, 255, 255, 0.5)',
       }}>
         <Typography variant="caption" sx={{ color: '#555', fontFamily: 'monospace', textTransform: 'uppercase', letterSpacing: 0.5 }}>
           {language || 'code'}
@@ -243,7 +243,7 @@ function CodeBlock({ className, children }) {
             size="small"
             startIcon={<ContentCopyIcon sx={{ fontSize: 14 }} />}
             onClick={handleCopy}
-            sx={{ fontSize: 12, textTransform: 'none', color: '#111', borderColor: '#000', '&:hover': { bgcolor: '#fff' } }}
+            sx={{ fontSize: 12, textTransform: 'none', color: '#111', borderColor: '#000', '&:hover': { bgcolor: 'rgba(255, 255, 255, 0.5)' } }}
           >
             {copied ? 'Copied!' : 'Copy'}
           </Button>
@@ -253,7 +253,7 @@ function CodeBlock({ className, children }) {
       <Box
         component="pre"
         sx={{
-          m: 0, p: 2, bgcolor: '#fff', fontFamily: 'monospace', fontSize: { xs: '0.8rem', md: '0.875em' },
+          m: 0, p: 2, bgcolor: 'rgba(255, 255, 255, 0.5)', fontFamily: 'monospace', fontSize: { xs: '0.8rem', md: '0.875em' },
           lineHeight: 1.7, maxWidth: '100%',
           overflowX: wrap ? 'visible' : 'auto',
           whiteSpace: wrap ? 'pre-wrap' : 'pre',
@@ -313,7 +313,7 @@ const markdownComponents = {
   blockquote: ({ children, ...props }) => (
     <Box
       component="blockquote"
-      sx={{ borderLeft: '4px solid #E0E0E0', pl: 2, my: 3, ml: 0, color: '#111' }}
+      sx={{ borderLeft: '4px solid rgba(255, 255, 255, 0.35)', pl: 2, my: 3, ml: 0, color: '#111' }}
       {...props}
     >
       {children}
@@ -324,7 +324,7 @@ const markdownComponents = {
       return (
         <Box
           component="code"
-          sx={{ bgcolor: '#fff', border: '1px solid #E0E0E0', px: 0.75, py: 0.25, borderRadius: 0, fontSize: '0.875em', fontFamily: 'monospace' }}
+          sx={{ bgcolor: 'rgba(255, 255, 255, 0.5)', border: '1px solid rgba(255, 255, 255, 0.35)', px: 0.75, py: 0.25, borderRadius: 0, fontSize: '0.875em', fontFamily: 'monospace' }}
           {...props}
         >
           {children}
@@ -354,7 +354,7 @@ const markdownComponents = {
     return (
       <Box
         component="pre"
-        sx={{ bgcolor: '#fff', p: 2, borderRadius: 0, overflow: 'auto', my: 3, border: '1px solid #E0E0E0', fontSize: { xs: '0.8rem', md: '0.875em' }, maxWidth: '100%' }}
+        sx={{ bgcolor: 'rgba(255, 255, 255, 0.5)', p: 2, borderRadius: 0, overflow: 'auto', my: 3, border: '1px solid rgba(255, 255, 255, 0.35)', fontSize: { xs: '0.8rem', md: '0.875em' }, maxWidth: '100%' }}
         {...props}
       >
         {children}
@@ -371,14 +371,14 @@ const markdownComponents = {
   th: ({ children, ...props }) => (
     <Box
       component="th"
-      sx={{ border: '1px solid #E0E0E0', p: 1, fontWeight: 600, textAlign: 'left', bgcolor: '#fff' }}
+      sx={{ border: '1px solid rgba(255, 255, 255, 0.35)', p: 1, fontWeight: 600, textAlign: 'left', bgcolor: 'rgba(255, 255, 255, 0.5)' }}
       {...props}
     >
       {children}
     </Box>
   ),
   td: ({ children, ...props }) => (
-    <Box component="td" sx={{ border: '1px solid #E0E0E0', p: 1 }} {...props}>
+    <Box component="td" sx={{ border: '1px solid rgba(255, 255, 255, 0.35)', p: 1 }} {...props}>
       {children}
     </Box>
   ),

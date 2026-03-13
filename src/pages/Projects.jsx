@@ -68,7 +68,7 @@ export default function ProjectsPage({ data }) {
             gap: 1,
             flexWrap: 'wrap',
             mb: { xs: 3, md: 5 },
-            borderBottom: '1px solid #E0E0E0',
+            borderBottom: '1px solid rgba(255, 255, 255, 0.35)',
             pb: 2,
           }}
         >
@@ -91,7 +91,7 @@ export default function ProjectsPage({ data }) {
                 minHeight: 38,
                 fontWeight: activeTab === cat ? 600 : 500,
                 '&:hover': {
-                  bgcolor: activeTab === cat ? '#000' : '#F0F0F0',
+                  bgcolor: activeTab === cat ? '#000' : 'rgba(255, 255, 255, 0.3)',
                   color: activeTab === cat ? '#FFF' : '#111',
                   borderColor: activeTab === cat ? '#000' : '#C8C8C8',
                 },
@@ -122,17 +122,21 @@ export default function ProjectsPage({ data }) {
               >
                 <Box
                   sx={{
-                    border: '1px solid #E0E0E0',
+                    border: '1px solid rgba(255, 255, 255, 0.35)',
                     borderRadius: 'var(--radius-lg)',
                     p: { xs: 2.5, md: 3 },
                     height: '100%',
                     display: 'flex',
                     flexDirection: 'column',
-                    bgcolor: 'var(--c-surface)',
-                    transition: 'background var(--transition-base), border-color var(--transition-base)',
+                    bgcolor: 'rgba(255, 255, 255, 0.45)',
+                    backdropFilter: 'blur(16px)',
+                    WebkitBackdropFilter: 'blur(16px)',
+                    boxShadow: '0 8px 32px rgba(0, 0, 0, 0.08)',
+                    transition: 'background var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base)',
                     '&:hover': {
-                      bgcolor: 'var(--c-surface-hover)',
-                      borderColor: 'var(--c-fg-muted)',
+                      bgcolor: 'rgba(255, 255, 255, 0.6)',
+                      borderColor: 'rgba(255, 255, 255, 0.5)',
+                      boxShadow: '0 12px 40px rgba(0, 0, 0, 0.12)',
                     },
                     '&:focus-within': { outline: '2px solid #000', outlineOffset: '2px' },
                   }}
@@ -228,7 +232,7 @@ export default function ProjectsPage({ data }) {
                           sx={{
                             fontFamily: accentFont,
                             fontSize: '0.65rem',
-                            borderColor: '#E0E0E0',
+                            borderColor: 'rgba(255, 255, 255, 0.35)',
                             color: '#111',
                             borderRadius: '999px',
                             height: 22,
@@ -243,7 +247,7 @@ export default function ProjectsPage({ data }) {
                     sx={{
                       mt: 'auto',
                       pt: 2,
-                      borderTop: '1px solid #E0E0E0',
+                      borderTop: '1px solid rgba(255, 255, 255, 0.35)',
                       display: 'flex',
                       justifyContent: 'space-between',
                       alignItems: 'center',
@@ -271,7 +275,7 @@ export default function ProjectsPage({ data }) {
                           startIcon={<ArticleIcon sx={{ fontSize: '13px !important' }} />}
                           sx={{
                             color: '#555',
-                            borderColor: '#D8D8D8',
+                            borderColor: 'rgba(255, 255, 255, 0.35)',
                             borderRadius: '100px',
                             fontSize: '0.7rem',
                             fontFamily: accentFont,
@@ -295,7 +299,7 @@ export default function ProjectsPage({ data }) {
                           endIcon={<OpenInNewIcon sx={{ fontSize: '12px !important' }} />}
                           sx={{
                             color: '#555',
-                            borderColor: '#D8D8D8',
+                            borderColor: 'rgba(255, 255, 255, 0.35)',
                             borderRadius: '100px',
                             fontSize: '0.7rem',
                             fontFamily: accentFont,

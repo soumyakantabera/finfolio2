@@ -9,17 +9,24 @@
   --color-white: #FFFFFF;
 }
 
-/* ── Design Tokens (Minimalist B&W) ── */
+/* ── Design Tokens (Glassmorphism) ── */
 :root {
-  --c-bg: #FAFAFA;
+  --c-bg: #e8eaf6;
   --c-fg: #111111;
   --c-fg-secondary: #555555;
 
-  --c-border: #E0E0E0;
-  --c-border-subtle: #EEEEEE;
+  --c-border: rgba(255, 255, 255, 0.35);
+  --c-border-subtle: rgba(255, 255, 255, 0.18);
   --c-accent: #000000;
   --border: 1px solid var(--c-border);
   --border-dashed: 1px dashed var(--c-border);
+
+  /* ── Glassmorphism Tokens ── */
+  --glass-bg: rgba(255, 255, 255, 0.45);
+  --glass-bg-hover: rgba(255, 255, 255, 0.6);
+  --glass-border: 1px solid rgba(255, 255, 255, 0.35);
+  --glass-blur: blur(16px);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
 
   /* ── Spacing Scale ── */
   --s1: 4px;
@@ -52,7 +59,7 @@
   --space-2xl: var(--s8);
   --space-3xl: var(--s9);
 
-  --radius: 0px;
+  --radius: 12px;
 
   --font-heading: 'Manrope', 'Helvetica', 'Arial', sans-serif;
   --font-body: 'Manrope', 'Helvetica', 'Arial', sans-serif;
@@ -74,7 +81,31 @@
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
-body { font-family: var(--font-body); -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; background: var(--c-bg); color: var(--c-fg); line-height: 1.75; }
+body {
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--c-bg);
+  color: var(--c-fg);
+  line-height: 1.75;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* ── Glassmorphism gradient background with orbs ── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(ellipse 600px 600px at 15% 20%, rgba(139, 92, 246, 0.18) 0%, transparent 70%),
+    radial-gradient(ellipse 500px 500px at 85% 25%, rgba(59, 130, 246, 0.15) 0%, transparent 70%),
+    radial-gradient(ellipse 450px 450px at 50% 80%, rgba(236, 72, 153, 0.12) 0%, transparent 70%),
+    radial-gradient(ellipse 400px 400px at 80% 70%, rgba(34, 197, 94, 0.10) 0%, transparent 70%),
+    linear-gradient(135deg, #e8eaf6 0%, #f3e5f5 35%, #e3f2fd 65%, #e8f5e9 100%);
+}
+
 a { color: inherit; text-decoration: none; }
 
 /* Tabular numerals for finance content */

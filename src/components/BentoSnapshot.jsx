@@ -65,16 +65,20 @@ function BentoTile({ children, gridArea, index, sx = {} }) {
       <Box
         sx={{
           height: '100%',
-          border: '1px solid var(--c-border)',
+          border: '1px solid rgba(255, 255, 255, 0.35)',
           borderRadius: 'var(--radius-lg)',
-          bgcolor: 'var(--c-surface)',
+          bgcolor: 'rgba(255, 255, 255, 0.45)',
+          backdropFilter: 'blur(16px)',
+          WebkitBackdropFilter: 'blur(16px)',
+          boxShadow: '0 8px 32px rgba(0, 0, 0, 0.08)',
           p: { xs: 2, md: 2.5 },
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'center',
-          transition: 'background var(--transition-base), box-shadow var(--transition-base)',
+          transition: 'background var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base)',
           '&:hover': {
-            bgcolor: 'var(--c-surface-hover)',
+            bgcolor: 'rgba(255, 255, 255, 0.6)',
+            borderColor: 'rgba(255, 255, 255, 0.5)',
           },
           ...sx,
         }}

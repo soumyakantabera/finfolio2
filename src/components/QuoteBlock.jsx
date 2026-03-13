@@ -32,8 +32,8 @@ export default function QuoteBlock({ quotes, mode = 'featured' }) {
       transition={{ duration: 0.8, ease: 'easeOut' }}
       sx={{
         py: { xs: 4, md: 6 },
-        borderTop: '1px solid #E0E0E0',
-        borderBottom: '1px solid #E0E0E0',
+        borderTop: '1px solid rgba(255, 255, 255, 0.35)',
+        borderBottom: '1px solid rgba(255, 255, 255, 0.35)',
         textAlign: 'center',
       }}
     >
@@ -82,7 +82,7 @@ export default function QuoteBlock({ quotes, mode = 'featured' }) {
                 width: 8,
                 height: 8,
                 bgcolor: i === activeIndex ? '#000' : '#FFFFFF',
-                border: '1px solid #E0E0E0',
+                border: '1px solid rgba(255, 255, 255, 0.35)',
                 cursor: 'pointer',
                 transition: 'none',
               }}

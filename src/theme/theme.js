@@ -9,9 +9,9 @@ const theme = createTheme({
     mode: 'light',
     primary: { main: '#0A0A0A' },
     secondary: { main: '#0A0A0A' },
-    background: { default: '#FAFAFA', paper: '#FFFFFF' },
+    background: { default: '#e8eaf6', paper: 'rgba(255, 255, 255, 0.45)' },
     text: { primary: '#0A0A0A', secondary: '#525252' },
-    divider: '#EBEBEB',
+    divider: 'rgba(255, 255, 255, 0.35)',
   },
   typography: {
     fontFamily: bodyFont,
@@ -29,7 +29,7 @@ const theme = createTheme({
     overline: { fontFamily: accentFont, fontWeight: 500, letterSpacing: '0.1em', fontSize: '0.7rem' },
     button: { fontFamily: bodyFont, textTransform: 'none', fontWeight: 500, fontSize: '0.875rem' },
   },
-  shape: { borderRadius: 8 },
+  shape: { borderRadius: 12 },
   components: {
     MuiButton: {
       styleOverrides: {
@@ -47,30 +47,36 @@ const theme = createTheme({
           '&:hover': { boxShadow: 'none' },
         },
         outlined: {
-          borderColor: '#EBEBEB',
+          borderColor: 'rgba(255, 255, 255, 0.35)',
           color: '#0A0A0A',
-          '&:hover': { backgroundColor: '#F5F5F5', borderColor: '#D4D4D4' },
+          backdropFilter: 'blur(8px)',
+          WebkitBackdropFilter: 'blur(8px)',
+          '&:hover': { backgroundColor: 'rgba(255, 255, 255, 0.3)', borderColor: 'rgba(255, 255, 255, 0.5)' },
         },
       },
     },
     MuiCard: {
       styleOverrides: {
         root: {
-          borderRadius: 12,
-          boxShadow: 'none',
-          border: '1px solid #EBEBEB',
-          transition: 'border-color 0.2s ease, box-shadow 0.2s ease',
+          borderRadius: 16,
+          boxShadow: '0 8px 32px rgba(0, 0, 0, 0.08)',
+          border: '1px solid rgba(255, 255, 255, 0.35)',
+          background: 'rgba(255, 255, 255, 0.45)',
+          backdropFilter: 'blur(16px)',
+          WebkitBackdropFilter: 'blur(16px)',
+          transition: 'border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease',
           '&:hover': {
-            borderColor: '#D4D4D4',
-            boxShadow: '0 1px 3px 0 rgba(0,0,0,0.04)',
+            borderColor: 'rgba(255, 255, 255, 0.5)',
+            boxShadow: '0 12px 40px rgba(0, 0, 0, 0.12)',
+            background: 'rgba(255, 255, 255, 0.6)',
           },
         },
       },
     },
     MuiChip: {
       styleOverrides: {
-        root: { borderRadius: 6, borderColor: '#EBEBEB', color: '#525252', fontSize: '0.8rem' },
-        outlined: { borderColor: '#EBEBEB' },
+        root: { borderRadius: 6, borderColor: 'rgba(255, 255, 255, 0.35)', color: '#525252', fontSize: '0.8rem' },
+        outlined: { borderColor: 'rgba(255, 255, 255, 0.35)', backdropFilter: 'blur(8px)', WebkitBackdropFilter: 'blur(8px)' },
       },
     },
     MuiAppBar: {
@@ -80,18 +86,37 @@ const theme = createTheme({
     },
     MuiPaper: {
       styleOverrides: {
-        root: { borderRadius: 12, boxShadow: 'none' },
+        root: {
+          borderRadius: 16,
+          boxShadow: '0 8px 32px rgba(0, 0, 0, 0.08)',
+          background: 'rgba(255, 255, 255, 0.45)',
+          backdropFilter: 'blur(16px)',
+          WebkitBackdropFilter: 'blur(16px)',
+          border: '1px solid rgba(255, 255, 255, 0.35)',
+        },
       },
     },
     MuiOutlinedInput: {
       styleOverrides: {
-        root: { borderRadius: 8 },
-        notchedOutline: { borderColor: '#EBEBEB' },
+        root: {
+          borderRadius: 12,
+          background: 'rgba(255, 255, 255, 0.4)',
+          backdropFilter: 'blur(8px)',
+          WebkitBackdropFilter: 'blur(8px)',
+        },
+        notchedOutline: { borderColor: 'rgba(255, 255, 255, 0.35)' },
       },
     },
     MuiDialog: {
       styleOverrides: {
-        paper: { borderRadius: 16, boxShadow: '0 25px 50px -12px rgba(0,0,0,0.12)' },
+        paper: {
+          borderRadius: 20,
+          boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.15)',
+          background: 'rgba(255, 255, 255, 0.65)',
+          backdropFilter: 'blur(24px)',
+          WebkitBackdropFilter: 'blur(24px)',
+          border: '1px solid rgba(255, 255, 255, 0.4)',
+        },
       },
     },
     MuiToggleButton: {
@@ -106,7 +131,7 @@ const theme = createTheme({
     },
     MuiDivider: {
       styleOverrides: {
-        root: { borderColor: '#EBEBEB' },
+        root: { borderColor: 'rgba(255, 255, 255, 0.35)' },
       },
     },
   },

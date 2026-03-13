@@ -63,8 +63,8 @@ export default function ContactPage({ data }) {
     mb: 2.5,
     '& .MuiOutlinedInput-root': {
       borderRadius: 'var(--radius)',
-      '& fieldset': { border: '1px solid #E0E0E0' },
-      '&:hover fieldset': { border: '1px solid #E0E0E0' },
+      '& fieldset': { border: '1px solid rgba(255, 255, 255, 0.35)' },
+      '&:hover fieldset': { border: '1px solid rgba(255, 255, 255, 0.35)' },
       '&.Mui-focused fieldset': { border: '1px solid #111' },
     },
     '& .MuiInputLabel-root': {
@@ -106,7 +106,7 @@ export default function ContactPage({ data }) {
         {/* Contact Info */}
         <Grid size={{ xs: 12, md: 5 }}>
           <motion.div {...scrollReveal}>
-            <Card variant="outlined" sx={{ mb: 3, border: '1px solid #E0E0E0', borderRadius: 'var(--radius-lg)', boxShadow: 'none' }}>
+            <Card variant="outlined" sx={{ mb: 3, border: '1px solid rgba(255, 255, 255, 0.35)', borderRadius: 'var(--radius-lg)', boxShadow: '0 8px 32px rgba(0, 0, 0, 0.08)', background: 'rgba(255, 255, 255, 0.45)', backdropFilter: 'blur(16px)', WebkitBackdropFilter: 'blur(16px)' }}>
               <CardContent sx={{ p: 2 }}>
                 {contact.email && (
                   <Box
@@ -114,7 +114,7 @@ export default function ContactPage({ data }) {
                     href={`mailto:${contact.email}`}
                     sx={{
                       display: 'flex', alignItems: 'center', gap: 1.5, py: 1.5,
-                      borderBottom: '1px solid #E0E0E0', textDecoration: 'none', color: '#111',
+                      borderBottom: '1px solid rgba(255, 255, 255, 0.35)', textDecoration: 'none', color: '#111',
                       minHeight: 48,
                       '&:hover': { fontWeight: 700 },
                       '&:focus-visible': { outline: '2px solid #000', outlineOffset: '2px' },
@@ -130,7 +130,7 @@ export default function ContactPage({ data }) {
                     href={`tel:${contact.phone}`}
                     sx={{
                       display: 'flex', alignItems: 'center', gap: 1.5, py: 1.5,
-                      borderBottom: '1px solid #E0E0E0', textDecoration: 'none', color: '#111',
+                      borderBottom: '1px solid rgba(255, 255, 255, 0.35)', textDecoration: 'none', color: '#111',
                       minHeight: 48,
                       '&:hover': { fontWeight: 700 },
                       '&:focus-visible': { outline: '2px solid #000', outlineOffset: '2px' },
@@ -157,7 +157,7 @@ export default function ContactPage({ data }) {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="LinkedIn"
-                  sx={{ color: '#111', border: '1px solid #E0E0E0', borderRadius: '50%', width: 44, height: 44, '&:hover': { bgcolor: '#000', color: '#FFF' } }}
+                  sx={{ color: '#111', border: '1px solid rgba(255, 255, 255, 0.35)', borderRadius: '50%', width: 44, height: 44, '&:hover': { bgcolor: '#000', color: '#FFF' } }}
                 >
                   <LinkedInIcon />
                 </IconButton>
@@ -168,7 +168,7 @@ export default function ContactPage({ data }) {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="GitHub"
-                  sx={{ color: '#111', border: '1px solid #E0E0E0', borderRadius: '50%', width: 44, height: 44, '&:hover': { bgcolor: '#000', color: '#FFF' } }}
+                  sx={{ color: '#111', border: '1px solid rgba(255, 255, 255, 0.35)', borderRadius: '50%', width: 44, height: 44, '&:hover': { bgcolor: '#000', color: '#FFF' } }}
                 >
                   <GitHubIcon />
                 </IconButton>
@@ -180,7 +180,7 @@ export default function ContactPage({ data }) {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.platform}
-                  sx={{ color: '#111', border: '1px solid #E0E0E0', borderRadius: '50%', width: 44, height: 44, '&:hover': { bgcolor: '#000', color: '#FFF' } }}
+                  sx={{ color: '#111', border: '1px solid rgba(255, 255, 255, 0.35)', borderRadius: '50%', width: 44, height: 44, '&:hover': { bgcolor: '#000', color: '#FFF' } }}
                 >
                   <LaunchIcon />
                 </IconButton>

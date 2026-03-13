@@ -107,7 +107,7 @@ export default function AboutPage({ data }) {
         gap: 2,
         cursor: collapsible ? 'pointer' : 'default',
         minHeight: 44,
-        borderBottom: '1px solid #E0E0E0',
+        borderBottom: '1px solid rgba(255, 255, 255, 0.35)',
         pb: 2,
       }}
       onClick={collapsible ? () => toggleSection(sectionKey) : undefined}
@@ -141,7 +141,7 @@ export default function AboutPage({ data }) {
   );
 
   return (
-    <Box sx={{ bgcolor: '#FFF', color: '#111' }}>
+    <Box sx={{ color: '#111' }}>
       {/* ── 01 / Hero ── */}
       <motion.div {...sectionReveal}>
         <Container maxWidth="lg" sx={{ py: { xs: 5, md: 10 }, px: { xs: 2, md: 5 } }}>
@@ -193,7 +193,7 @@ export default function AboutPage({ data }) {
                       rel="noopener noreferrer"
                       aria-label={link.platform}
                       sx={{
-                        color: '#111', border: '1px solid #E0E0E0', borderRadius: '50%',
+                        color: '#111', border: '1px solid rgba(255, 255, 255, 0.35)', borderRadius: '50%',
                         width: 44, height: 44,
                         '&:hover': { bgcolor: '#000', color: '#FFF', borderColor: '#000' },
                       }}
@@ -208,7 +208,7 @@ export default function AboutPage({ data }) {
 
             {/* Right: profile card */}
             <Grid size={{ xs: 12, md: 5 }}>
-              <Box sx={{ border: '1px solid #E0E0E0', borderRadius: 'var(--radius-lg)', p: { xs: 2.5, md: 4 } }}>
+              <Box sx={{ border: '1px solid rgba(255, 255, 255, 0.35)', borderRadius: 'var(--radius-lg)', p: { xs: 2.5, md: 4 } }}>
                 <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 3 }}>
                   <Avatar
                     src={about.profilePhoto || undefined}
@@ -216,7 +216,7 @@ export default function AboutPage({ data }) {
                     sx={{
                       width: 64, height: 64,
                       bgcolor: '#000', fontSize: 28, fontWeight: 700,
-                      color: '#FFF', border: '1px solid #E0E0E0',
+                      color: '#FFF', border: '1px solid rgba(255, 255, 255, 0.35)',
                     }}
                   >
                     {about.name?.[0]}
@@ -245,7 +245,7 @@ export default function AboutPage({ data }) {
                           justifyContent: 'space-between',
                           alignItems: 'center',
                           py: 1.5,
-                          borderBottom: i < about.metrics.length - 1 ? '1px solid #E0E0E0' : 'none',
+                          borderBottom: i < about.metrics.length - 1 ? '1px solid rgba(255, 255, 255, 0.35)' : 'none',
                           minHeight: 44,
                         }}
                       >
@@ -304,7 +304,7 @@ export default function AboutPage({ data }) {
                     flexWrap: 'wrap',
                     gap: 1,
                     py: 2.5,
-                    borderBottom: idx < about.experience.length - 1 ? '1px solid #E0E0E0' : 'none',
+                    borderBottom: idx < about.experience.length - 1 ? '1px solid rgba(255, 255, 255, 0.35)' : 'none',
                     minHeight: 56,
                   }}
                 >
@@ -323,7 +323,7 @@ export default function AboutPage({ data }) {
                   </Box>
                   <Chip label={exp.period} size="small" sx={{
                     bgcolor: '#FFF', color: '#111', fontWeight: 600, fontSize: '0.7rem',
-                    border: '1px solid #E0E0E0', fontFamily: accentFont, borderRadius: '999px',
+                    border: '1px solid rgba(255, 255, 255, 0.35)', fontFamily: accentFont, borderRadius: '999px',
                   }} />
                 </Box>
               ))}
@@ -346,7 +346,7 @@ export default function AboutPage({ data }) {
               <Grid container spacing={{ xs: 2, md: 3 }}>
                 {about.education.map((edu) => (
                   <Grid size={{ xs: 12, md: 6 }} key={edu.id}>
-                    <Box sx={{ border: '1px solid #E0E0E0', borderRadius: 'var(--radius-lg)', p: { xs: 2.5, md: 3 }, height: '100%' }}>
+                    <Box sx={{ border: '1px solid rgba(255, 255, 255, 0.35)', borderRadius: 'var(--radius-lg)', p: { xs: 2.5, md: 3 }, height: '100%' }}>
                       <Typography variant="subtitle1" fontWeight={600} sx={{ color: '#111' }}>
                         {edu.degree}
                       </Typography>
@@ -388,7 +388,7 @@ export default function AboutPage({ data }) {
                     <Grid size={{ xs: 12, md: 4 }} key={skill.id}>
                       <Box sx={{
                         py: 1.5, px: 2,
-                        border: '1px solid #E0E0E0',
+                        border: '1px solid rgba(255, 255, 255, 0.35)',
                         borderRadius: 'var(--radius-lg)',
                         minHeight: 44,
                       }}>
@@ -438,7 +438,7 @@ export default function AboutPage({ data }) {
                     <Grid size={{ xs: 12, md: 4 }} key={cert.id}>
                       <Box
                         sx={{
-                          border: '1px solid #E0E0E0',
+                          border: '1px solid rgba(255, 255, 255, 0.35)',
                           borderRadius: 'var(--radius-lg)',
                           p: { xs: 2, md: 2.5 },
                           cursor: hasMedia ? 'pointer' : 'default',
@@ -500,8 +500,10 @@ export default function AboutPage({ data }) {
           maxWidth: { xs: '100%', md: 900 },
           height: { xs: '100%', md: 'auto' },
           maxHeight: { xs: '100%', md: '85vh' },
-          bgcolor: '#FFF',
-          border: '1px solid #E0E0E0',
+          bgcolor: 'rgba(255, 255, 255, 0.65)',
+          border: '1px solid rgba(255, 255, 255, 0.35)',
+          backdropFilter: 'blur(24px)',
+          WebkitBackdropFilter: 'blur(24px)',
           display: 'flex',
           flexDirection: 'column',
           outline: 'none',
@@ -510,7 +512,7 @@ export default function AboutPage({ data }) {
           <Box sx={{
             display: 'flex', alignItems: 'center', justifyContent: 'space-between',
             px: { xs: 2, md: 3 }, py: 1.5,
-            borderBottom: '1px solid #E0E0E0', flexShrink: 0,
+            borderBottom: '1px solid rgba(255, 255, 255, 0.35)', flexShrink: 0,
           }}>
             <Typography variant="subtitle1" fontWeight={600} noWrap sx={{ flex: 1, mr: 1, color: '#111' }}>
               {selectedCert?.title || selectedCert?.name}
@@ -518,7 +520,7 @@ export default function AboutPage({ data }) {
             <IconButton
               onClick={() => setSelectedCert(null)}
               aria-label="Close"
-              sx={{ color: '#111', flexShrink: 0, border: '1px solid #E0E0E0', borderRadius: '50%', width: 40, height: 40 }}
+              sx={{ color: '#111', flexShrink: 0, border: '1px solid rgba(255, 255, 255, 0.35)', borderRadius: '50%', width: 40, height: 40 }}
               size="large"
             >
               <CloseIcon />
@@ -547,7 +549,7 @@ export default function AboutPage({ data }) {
           {/* Footer */}
           <Box sx={{
             px: { xs: 2, md: 3 }, py: 2,
-            borderTop: '1px solid #E0E0E0', flexShrink: 0,
+            borderTop: '1px solid rgba(255, 255, 255, 0.35)', flexShrink: 0,
             display: 'flex', flexDirection: { xs: 'column', md: 'row' },
             alignItems: { xs: 'stretch', md: 'center' },
             gap: 2,
@@ -577,7 +579,7 @@ export default function AboutPage({ data }) {
                 href={selectedCert?.mediaUrl}
                 download
                 sx={{
-                  borderColor: '#E0E0E0', color: '#111',
+                  borderColor: 'rgba(255, 255, 255, 0.35)', color: '#111',
                   '&:hover': { bgcolor: '#000', color: '#FFF', borderColor: '#000' },
                 }}
               >
@@ -616,7 +618,7 @@ export default function AboutPage({ data }) {
               <Grid container spacing={{ xs: 2, md: 3 }}>
                 {about.achievements.map((ach) => (
                   <Grid size={{ xs: 12, md: 4 }} key={ach.id}>
-                    <Box sx={{ border: '1px solid #E0E0E0', borderRadius: 'var(--radius-lg)', p: { xs: 2.5, md: 3 }, height: '100%' }}>
+                    <Box sx={{ border: '1px solid rgba(255, 255, 255, 0.35)', borderRadius: 'var(--radius-lg)', p: { xs: 2.5, md: 3 }, height: '100%' }}>
                       <Typography variant="body1" fontWeight={600} sx={{ color: '#111' }}>
                         {ach.title}
                       </Typography>
