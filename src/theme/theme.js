@@ -76,7 +76,18 @@ const theme = createTheme({
     },
     MuiChip: {
       styleOverrides: {
-        root: { borderRadius: 6, borderColor: 'rgba(255, 255, 255, 0.35)', color: '#525252', fontSize: '0.8rem', transition: 'background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease', '&:hover': { background: 'rgba(255, 255, 255, 0.5)', borderColor: 'rgba(255, 255, 255, 0.5)', boxShadow: '0 2px 8px rgba(0, 0, 0, 0.06)' } },
+        root: {
+          borderRadius: 6,
+          borderColor: 'rgba(255, 255, 255, 0.35)',
+          color: '#525252',
+          fontSize: '0.8rem',
+          transition: 'background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease',
+          '&:hover': {
+            background: 'rgba(255, 255, 255, 0.5)',
+            borderColor: 'rgba(255, 255, 255, 0.5)',
+            boxShadow: '0 2px 8px rgba(0, 0, 0, 0.06)',
+          },
+        },
         outlined: { borderColor: 'rgba(255, 255, 255, 0.35)', backdropFilter: 'blur(8px)', WebkitBackdropFilter: 'blur(8px)' },
       },
     },
