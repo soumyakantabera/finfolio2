@@ -103,7 +103,7 @@ export default function ContactPage({ data }) {
         </Typography>
       </motion.div>
 
-      <PageDescriptionTile description="Have a question or want to work together? Reach out through any of the channels below or fill out the contact form." />
+      <PageDescriptionTile description={contact.pageDescription || "Have a question or want to work together? Reach out through any of the channels below or fill out the contact form."} />
 
       <Grid container spacing={{ xs: 3, md: 4 }}>
         {/* Contact Info */}

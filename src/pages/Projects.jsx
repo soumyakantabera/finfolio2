@@ -62,7 +62,7 @@ export default function ProjectsPage({ data }) {
           Projects
         </Typography>
 
-        <PageDescriptionTile description="Browse a curated collection of projects, research papers, and case studies across different domains." />
+        <PageDescriptionTile description={data.settings?.projectsPageDescription || "Browse a curated collection of projects, research papers, and case studies across different domains."} />
 
         {/* Filter tabs */}
         <Box

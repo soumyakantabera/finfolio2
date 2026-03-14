@@ -183,7 +183,7 @@ export default function AboutPage({ data }) {
                   {about.introDescription}
                 </Typography>
               )}
-              <PageDescriptionTile description="Learn more about my background, experience, skills, and achievements. Explore each section below for details." />
+              <PageDescriptionTile description={about.pageDescription || "Learn more about my background, experience, skills, and achievements. Explore each section below for details."} />
               {/* Contact Links */}
               {about.contactLinks?.length > 0 && (
                 <Box sx={{ display: 'flex', gap: 1.5, flexWrap: 'wrap' }}>
