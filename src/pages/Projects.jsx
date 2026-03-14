@@ -5,6 +5,7 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import ArticleIcon from '@mui/icons-material/Article';
 import { motion } from 'framer-motion';
+import PageDescriptionTile from '../components/PageDescriptionTile';
 
 const serifFont = '"Manrope", "Helvetica", "Arial", sans-serif';
 const accentFont = '"Manrope", "Helvetica", "Arial", sans-serif';
@@ -60,6 +61,8 @@ export default function ProjectsPage({ data }) {
         >
           Projects
         </Typography>
+
+        <PageDescriptionTile description={data.settings?.projectsPageDescription || "Browse a curated collection of projects, research papers, and case studies across different domains."} />
 
         {/* Filter tabs */}
         <Box

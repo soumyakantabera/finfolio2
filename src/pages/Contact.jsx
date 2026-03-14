@@ -21,6 +21,7 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import LaunchIcon from '@mui/icons-material/Launch';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { motion } from 'framer-motion';
+import PageDescriptionTile from '../components/PageDescriptionTile';
 
 export default function ContactPage({ data }) {
   const { contact } = data;
@@ -101,6 +102,8 @@ export default function ContactPage({ data }) {
           Contact
         </Typography>
       </motion.div>
+
+      <PageDescriptionTile description={contact.pageDescription || "Have a question or want to work together? Reach out through any of the channels below or fill out the contact form."} />
 
       <Grid container spacing={{ xs: 3, md: 4 }}>
         {/* Contact Info */}

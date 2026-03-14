@@ -20,6 +20,7 @@ import VerifiedOutlinedIcon from '@mui/icons-material/VerifiedOutlined';
 import StarOutlineIcon from '@mui/icons-material/StarOutline';
 import QuoteBlock from '../components/QuoteBlock';
 import BentoSnapshot from '../components/BentoSnapshot';
+import PageDescriptionTile from '../components/PageDescriptionTile';
 import { motion } from 'framer-motion';
 
 const serifFont = '"Manrope", "Helvetica", "Arial", sans-serif';
@@ -110,6 +111,9 @@ export default function HomePage({ data }) {
                   <Typography variant="body1" sx={{ color: '#111', maxWidth: 500, mb: 4, lineHeight: 1.7 }}>
                     {home.introText}
                   </Typography>
+                )}
+                {home.pageDescription && (
+                  <PageDescriptionTile description={home.pageDescription} />
                 )}
                 {home.ctaButtons?.length > 0 && (
                   <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap', flexDirection: { xs: 'column', md: 'row' } }}>

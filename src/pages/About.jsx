@@ -31,6 +31,7 @@ import EmojiEventsOutlinedIcon from '@mui/icons-material/EmojiEventsOutlined';
 import VerifiedOutlinedIcon from '@mui/icons-material/VerifiedOutlined';
 import FolderOutlinedIcon from '@mui/icons-material/FolderOutlined';
 import TrendingUpIcon from '@mui/icons-material/TrendingUp';
+import PageDescriptionTile from '../components/PageDescriptionTile';
 
 const serifFont = '"Manrope", "Helvetica", "Arial", sans-serif';
 const accentFont = '"Manrope", "Helvetica", "Arial", sans-serif';
@@ -182,6 +183,7 @@ export default function AboutPage({ data }) {
                   {about.introDescription}
                 </Typography>
               )}
+              <PageDescriptionTile description={about.pageDescription || "Learn more about my background, experience, skills, and achievements. Explore each section below for details."} />
               {/* Contact Links */}
               {about.contactLinks?.length > 0 && (
                 <Box sx={{ display: 'flex', gap: 1.5, flexWrap: 'wrap' }}>
@@ -208,15 +210,29 @@ export default function AboutPage({ data }) {
 
             {/* Right: profile card */}
             <Grid size={{ xs: 12, md: 5 }}>
-              <Box sx={{ border: '1px solid rgba(255, 255, 255, 0.35)', borderRadius: 'var(--radius-lg)', p: { xs: 2.5, md: 4 } }}>
+              <Box sx={{
+                border: '1px solid rgba(255, 255, 255, 0.35)',
+                borderRadius: 'var(--radius-lg)',
+                p: { xs: 2.5, md: 4 },
+                bgcolor: 'rgba(255, 255, 255, 0.45)',
+                backdropFilter: 'blur(16px)',
+                WebkitBackdropFilter: 'blur(16px)',
+                boxShadow: '0 8px 32px rgba(0, 0, 0, 0.08)',
+                transition: 'box-shadow var(--transition-base), border-color var(--transition-base)',
+                '&:hover': {
+                  boxShadow: '0 12px 40px rgba(0, 0, 0, 0.10), 0 0 24px rgba(139, 92, 246, 0.06)',
+                  borderColor: 'rgba(255, 255, 255, 0.55)',
+                },
+              }}>
                 <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 3 }}>
                   <Avatar
                     src={about.profilePhoto || undefined}
                     alt={about.name}
                     sx={{
-                      width: 64, height: 64,
-                      bgcolor: '#000', fontSize: 28, fontWeight: 700,
-                      color: '#FFF', border: '1px solid rgba(255, 255, 255, 0.35)',
+                      width: 80, height: 80,
+                      bgcolor: '#000', fontSize: 32, fontWeight: 700,
+                      color: '#FFF', border: '2px solid rgba(255, 255, 255, 0.5)',
+                      boxShadow: '0 4px 16px rgba(0, 0, 0, 0.12)',
                     }}
                   >
                     {about.name?.[0]}
@@ -304,7 +320,18 @@ export default function AboutPage({ data }) {
                     flexWrap: 'wrap',
                     gap: 1,
                     py: 2.5,
-                    borderBottom: idx < about.experience.length - 1 ? '1px solid rgba(255, 255, 255, 0.35)' : 'none',
+                    px: { xs: 2, md: 3 },
+                    mb: 2,
+                    border: '1px solid rgba(255, 255, 255, 0.35)',
+                    borderRadius: 'var(--radius)',
+                    bgcolor: 'rgba(255, 255, 255, 0.35)',
+                    backdropFilter: 'blur(12px)',
+                    WebkitBackdropFilter: 'blur(12px)',
+                    transition: 'background var(--transition-base), box-shadow var(--transition-base)',
+                    '&:hover': {
+                      bgcolor: 'rgba(255, 255, 255, 0.55)',
+                      boxShadow: '0 4px 20px rgba(0, 0, 0, 0.06)',
+                    },
                     minHeight: 56,
                   }}
                 >
@@ -346,7 +373,20 @@ export default function AboutPage({ data }) {
               <Grid container spacing={{ xs: 2, md: 3 }}>
                 {about.education.map((edu) => (
                   <Grid size={{ xs: 12, md: 6 }} key={edu.id}>
-                    <Box sx={{ border: '1px solid rgba(255, 255, 255, 0.35)', borderRadius: 'var(--radius-lg)', p: { xs: 2.5, md: 3 }, height: '100%' }}>
+                    <Box sx={{
+                      border: '1px solid rgba(255, 255, 255, 0.35)',
+                      borderRadius: 'var(--radius-lg)',
+                      p: { xs: 2.5, md: 3 },
+                      height: '100%',
+                      bgcolor: 'rgba(255, 255, 255, 0.35)',
+                      backdropFilter: 'blur(12px)',
+                      WebkitBackdropFilter: 'blur(12px)',
+                      transition: 'background var(--transition-base), box-shadow var(--transition-base)',
+                      '&:hover': {
+                        bgcolor: 'rgba(255, 255, 255, 0.55)',
+                        boxShadow: '0 4px 20px rgba(0, 0, 0, 0.06)',
+                      },
+                    }}>
                       <Typography variant="subtitle1" fontWeight={600} sx={{ color: '#111' }}>
                         {edu.degree}
                       </Typography>
@@ -391,6 +431,14 @@ export default function AboutPage({ data }) {
                         border: '1px solid rgba(255, 255, 255, 0.35)',
                         borderRadius: 'var(--radius-lg)',
                         minHeight: 44,
+                        bgcolor: 'rgba(255, 255, 255, 0.35)',
+                        backdropFilter: 'blur(12px)',
+                        WebkitBackdropFilter: 'blur(12px)',
+                        transition: 'background var(--transition-base), box-shadow var(--transition-base)',
+                        '&:hover': {
+                          bgcolor: 'rgba(255, 255, 255, 0.55)',
+                          boxShadow: '0 4px 20px rgba(0, 0, 0, 0.06)',
+                        },
                       }}>
                         <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 1 }}>
                           <Typography variant="body2" fontWeight={600} sx={{ color: '#111' }}>
@@ -446,7 +494,13 @@ export default function AboutPage({ data }) {
                           alignItems: 'center',
                           gap: 1.5,
                           minHeight: 56,
-                          '&:hover': hasMedia ? { bgcolor: '#000', color: '#FFF' } : {},
+                          bgcolor: 'rgba(255, 255, 255, 0.35)',
+                          backdropFilter: 'blur(12px)',
+                          WebkitBackdropFilter: 'blur(12px)',
+                          transition: 'background var(--transition-base), box-shadow var(--transition-base), color var(--transition-base)',
+                          '&:hover': hasMedia
+                            ? { bgcolor: '#000', color: '#FFF', boxShadow: '0 4px 20px rgba(0, 0, 0, 0.12)' }
+                            : { bgcolor: 'rgba(255, 255, 255, 0.55)', boxShadow: '0 4px 20px rgba(0, 0, 0, 0.06)' },
                           '&:focus-visible': { outline: '2px solid #000', outlineOffset: '2px' },
                         }}
                         onClick={hasMedia ? () => setSelectedCert(cert) : undefined}
@@ -618,7 +672,20 @@ export default function AboutPage({ data }) {
               <Grid container spacing={{ xs: 2, md: 3 }}>
                 {about.achievements.map((ach) => (
                   <Grid size={{ xs: 12, md: 4 }} key={ach.id}>
-                    <Box sx={{ border: '1px solid rgba(255, 255, 255, 0.35)', borderRadius: 'var(--radius-lg)', p: { xs: 2.5, md: 3 }, height: '100%' }}>
+                    <Box sx={{
+                      border: '1px solid rgba(255, 255, 255, 0.35)',
+                      borderRadius: 'var(--radius-lg)',
+                      p: { xs: 2.5, md: 3 },
+                      height: '100%',
+                      bgcolor: 'rgba(255, 255, 255, 0.35)',
+                      backdropFilter: 'blur(12px)',
+                      WebkitBackdropFilter: 'blur(12px)',
+                      transition: 'background var(--transition-base), box-shadow var(--transition-base)',
+                      '&:hover': {
+                        bgcolor: 'rgba(255, 255, 255, 0.55)',
+                        boxShadow: '0 4px 20px rgba(0, 0, 0, 0.06)',
+                      },
+                    }}>
                       <Typography variant="body1" fontWeight={600} sx={{ color: '#111' }}>
                         {ach.title}
                       </Typography>
