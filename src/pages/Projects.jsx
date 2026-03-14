@@ -135,8 +135,8 @@ export default function ProjectsPage({ data }) {
                     transition: 'background var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base)',
                     '&:hover': {
                       bgcolor: 'rgba(255, 255, 255, 0.6)',
-                      borderColor: 'rgba(255, 255, 255, 0.5)',
-                      boxShadow: '0 12px 40px rgba(0, 0, 0, 0.12)',
+                      borderColor: 'rgba(255, 255, 255, 0.55)',
+                      boxShadow: '0 12px 40px rgba(0, 0, 0, 0.10), 0 0 20px rgba(139, 92, 246, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.5)',
                     },
                     '&:focus-within': { outline: '2px solid #000', outlineOffset: '2px' },
                   }}
