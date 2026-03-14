@@ -6,6 +6,7 @@ import theme from './theme/theme';
 import { loadData, saveData } from './data/portfolioData';
 import Navbar from './components/Navbar';
 import ScrollToTop from './components/ScrollToTop';
+import GlassCursor from './components/GlassCursor';
 import './index.css';
 
 // Lazy-load page components
@@ -36,6 +37,7 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
+      <GlassCursor />
       <HashRouter>
         <ScrollToTop />
         <Navbar data={data} isAdmin={isAdmin} />
