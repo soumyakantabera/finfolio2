@@ -71,7 +71,7 @@ export default function GlassCursor() {
   // Hide on touch devices or when reduced motion is preferred
   if (isTouch || reducedMotion) return null;
 
-  const size = hovering ? 48 : 32;
+  const size = hovering ? 56 : 32;
   const offset = size / 2;
 
   return (
@@ -91,21 +91,21 @@ export default function GlassCursor() {
         marginTop: -offset,
         borderRadius: '50%',
         background: hovering
-          ? 'radial-gradient(circle, rgba(139,92,246,0.25) 0%, rgba(59,130,246,0.15) 50%, transparent 70%)'
+          ? 'radial-gradient(circle at 40% 40%, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0.35) 30%, rgba(139,92,246,0.18) 55%, transparent 70%)'
           : 'radial-gradient(circle, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0.15) 50%, transparent 70%)',
-        backdropFilter: 'blur(4px)',
-        WebkitBackdropFilter: 'blur(4px)',
+        backdropFilter: hovering ? 'blur(2px) saturate(1.4) contrast(1.05)' : 'blur(4px)',
+        WebkitBackdropFilter: hovering ? 'blur(2px) saturate(1.4) contrast(1.05)' : 'blur(4px)',
         border: hovering
-          ? '1px solid rgba(139,92,246,0.3)'
+          ? '1.5px solid rgba(139,92,246,0.35)'
           : '1px solid rgba(255,255,255,0.35)',
         boxShadow: hovering
-          ? '0 0 20px rgba(139,92,246,0.15)'
+          ? '0 0 24px rgba(139,92,246,0.18), inset 0 0 12px rgba(255,255,255,0.25)'
           : '0 0 12px rgba(255,255,255,0.1)',
         mixBlendMode: 'normal',
       }}
       animate={{
         opacity: visible ? 1 : 0,
-        scale: hovering ? 1.3 : 1,
+        scale: hovering ? 1.35 : 1,
         width: size,
         height: size,
         marginLeft: -offset,
