@@ -92,6 +92,13 @@ body {
   position: relative;
 }
 
+body.glass-cursor-hidden,
+body.glass-cursor-hidden *,
+body.glass-cursor-hidden *::before,
+body.glass-cursor-hidden *::after {
+  cursor: none !important;
+}
+
 /* ── Glassmorphism gradient background with orbs ── */
 body::before {
   content: '';

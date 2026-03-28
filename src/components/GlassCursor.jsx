@@ -31,6 +31,13 @@ export default function GlassCursor() {
   const [visible, setVisible] = useState(false);
   const [hovering, setHovering] = useState(false);
 
+  useEffect(() => {
+    if (isTouch || reducedMotion) return;
+    const { classList } = document.body;
+    classList.add('glass-cursor-hidden');
+    return () => classList.remove('glass-cursor-hidden');
+  }, [isTouch, reducedMotion]);
+
   const cursorX = useMotionValue(-100);
   const cursorY = useMotionValue(-100);
 
